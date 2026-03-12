@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pocketpaw with discord extra from PyPI
-RUN pip install --no-cache-dir 'pocketpaw[discord]'
+RUN pip install --no-cache-dir 'pocketpaw[discord,openai-agents]'
 
 RUN groupadd --system pocketpaw && \
     useradd --system --gid pocketpaw --create-home pocketpaw && \
