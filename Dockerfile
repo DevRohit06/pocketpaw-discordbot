@@ -14,7 +14,7 @@ COPY --from=node /usr/local/lib/node_modules /usr/local/lib/node_modules
 RUN ln -s /usr/local/lib/node_modules/@anthropic-ai/claude-code/cli.js /usr/local/bin/claude
 
 # Install pocketpaw with discord and openai-agents extras
-RUN pip install --no-cache-dir 'pocketpaw[discord,openai-agents]'
+RUN pip install --no-cache-dir 'pocketpaw[discord,openai-agents]' 'openai-agents[litellm]'
 
 RUN groupadd --system pocketpaw && \
     useradd --system --gid pocketpaw --create-home pocketpaw && \
