@@ -1,0 +1,15 @@
+services:
+  paw:
+    build: .
+    container_name: paw-discord
+    volumes:
+      - paw-data:/home/pocketpaw/.pocketpaw
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - path: .env
+        required: true
+    restart: unless-stopped
+
+volumes:
+  paw-data:
